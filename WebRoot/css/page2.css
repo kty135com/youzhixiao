@@ -1,0 +1,224 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.clearfix::after {
+	display: block;
+	content: '';
+	overflow: hidden;
+	clear: both;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.text-center {
+	text-align: center;
+	font-family: 瀹嬩綋;
+	font-weight: 800;
+}
+
+/*以下是表格的css*/
+.table {
+	border: 1px solid #585858;
+}
+
+.td {
+	border: 1px solid #585858;
+	width: 100px;
+	height: 30px;
+}
+
+/*此处已修改---绿色边框以及项目二字*/
+.header {
+	/* height: 100px;*/
+	height: 40px;
+	line-height: 40px;
+	color: #333;
+	text-align: center;
+	/*  font-size: 30px;*/
+	font-size: 25px;
+	background-color: #A8D08D;
+	font-family: 隶书;
+}
+/*以下是表格的css*/
+.table {
+	border: 1px solid #585858;
+}
+
+.td {
+	border: 1px solid #585858;
+	width: 100px;
+	height: 30px;
+}
+
+/*此处被修改*/
+.main .main-left {
+	float: left;
+	/*width: 200px;*/
+	width: 210px;
+	background-color: #EDEDED;
+	padding: 10px;
+}
+
+.main .main-left p {
+	line-height: 30px;
+	font-size: 14px;
+}
+
+.main .main-left div.boxs {
+	padding: 10%;
+	background-color: #EDEDED;
+	border: 3px double #585858;
+}
+
+/*
+        .main .main-left{
+            float: left;
+            width: 200px;
+            background-color: #EDEDED;
+            padding: 10px;
+        }
+       */
+.main .main-left p.box {
+	padding: 10%;
+	background-color: #ffffff;
+	border: 1px solid #000000;
+}
+
+.main .progress {
+	position: relative;
+	width: 100%;
+	height: 40px;
+	background-color: #fff;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+}
+
+.main .progress-pass {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 80%;
+	transition: all .3s ease;
+	background-color: #548235;
+}
+
+.main .progress span {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	line-height: 40px;
+}
+
+li {
+	list-style: none;
+}
+
+.main-right {
+	float: left;
+	width: 620px;
+	padding: 0 10px;
+	/*background-color: #333;*/
+}
+
+.main-right-tit {
+	font-weight: bold;
+	font-size: 18px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-family: 瀹嬩綋;
+}
+
+.main-right-item {
+	border: 1px solid #ccc;
+}
+
+.main-right-item .item-row {
+	font-size: 14px;
+	font-family: 妤蜂綋;
+	height: 30px;
+	line-height: 30px;
+	background-color: #9CC2E5;
+	border-bottom: 1px solid #ccc;
+	padding: 0 10px;
+}
+
+/*-------------------------------------------------------*/
+.main-right-item .item-row .col {
+	display: inline-block;
+	width: 32%;
+	font-size: 17px;
+	font-weight: 400;
+	font-family: 妤蜂綋;
+}
+
+.main-item-list {
+	padding: 4px 10px;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+.font {
+	font-family: 瀹嬩綋;
+	font-weight: 600;
+}
+
+.font2 {
+	font-size: 30px;
+	font-weight: 400;
+	font-family: 妤蜂綋;
+}
+
+.font3 {
+	font-size: 30px;
+	font-family: 鏂板畫浣�;
+	font-weight: 600;
+}
+
+.font4 {
+	font-weight: 700;
+	font-size: 30px;
+	font-family: 鏂板畫浣�;
+}
+
+.font5 {
+	font-size: 17px;
+	font-weight: 400;
+	font-family: 闅朵功;
+}
+
+.hezi {
+	height: 180px;
+	border: 1px solid #A4A4A4;
+}
+
+.doublehezi {
+	height: 177px;
+	width: 306px;
+	float: left;
+	border: 1px solid black;
+}
+
+.hezi2 {
+	font-size: 14px;
+	font-family: 妤蜂綋;
+	height: 60px;
+	line-height: 30px;
+	background-color: #9CC2E5;
+	border-bottom: 1px solid #ccc;
+	padding: 0 10px;
+}

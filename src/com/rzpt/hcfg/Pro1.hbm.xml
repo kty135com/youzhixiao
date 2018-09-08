@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.rzpt.entity.Pro1" table="pro1">
+		<id name="id">
+			<generator class="native" ></generator>
+		</id>
+		<property name="name"></property>
+		<property name="no"></property>
+		<property name="money"></property>
+		<property name="schedule"></property>
+		<property name="start_time"></property>
+		<property name="plan_time"></property>
+		<property name="finish_time"></property>
+		<property name="state"></property>
+		<property name="user_id"></property>
+		<property name="user"></property>
+	</class>
+
+</hibernate-mapping>

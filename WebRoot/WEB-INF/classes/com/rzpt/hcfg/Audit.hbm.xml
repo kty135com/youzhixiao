@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.rzpt.entity.Audit" table="audit">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="time"></property>
+		<property name="opinion"></property>
+		<property name="result"></property>
+		<property name="watch_id"></property>
+		<property name="user_id"></property>
+	</class>
+</hibernate-mapping>

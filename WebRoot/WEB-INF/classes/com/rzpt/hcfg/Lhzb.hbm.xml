@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.rzpt.entity.Lhzb" table="tb_zylhzb">
+		<id name="id" column="lh_id">
+			<generator class="native"></generator>
+		</id>
+		<property name="num" column="lh_num"></property>
+		<property name="content" column="lh_content"></property>
+		<property name="desc" column="lh_desc"></property>
+		<property name="base" column="lh_base"></property>
+		<property name="zb" column="lh_zb"></property>
+		<property name="mid" column="lh_mid_desc"></property>
+		<property name="midFenMu" column="lh_mid_fenmu"></property>
+		<property name="midFenZi" column="lh_mid_fenzi"></property>
+		<property name="last" column="lh_last_desc"></property>
+		<property name="lastFenZi" column="lh_last_fenzi"></property>
+		<property name="lastFenMu" column="lh_last_fenmu"></property>
+		<property name="dept" column="lh_dept"></property>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,115 @@
+table.table_main {
+	border: 1px solid #666666;
+	border-collapse: collapse;
+	width: 800px;
+}
+
+table.rightmain {
+	width: 99%;
+	border: 1px solid #999999;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+
+table.rightsub {
+	width: 99%;
+	border: 1px solid #CCCCCC;
+	border-collapse: collapse;
+	margin-top: 5px;
+	font-size: 12px;
+}
+
+table.rightsub span {
+	font-size: 13px;
+	font-weight: bold;
+	color: #FF9900;
+}
+
+div.main_left1 {
+	font-size: 14px;
+	font-weight: bold;
+	/*background-color: #FFFFFF;*/
+	width: auto;
+	height: 200px;
+	line-height: 180%;
+	color: #0066FF;
+	padding-top:20px;
+	/*padding-bottom: 50%;*/
+ 	padding-left:15px;
+	padding-right:10px;
+	display:block;
+}
+
+div.main_left2 {
+	font-size: 12px;
+	width: auto;
+	height: auto;
+	line-height: 150%;
+	text-align: left;
+	padding-left: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #BFE7EA
+}
+
+div.jindutiao {
+	width: 100px;
+	height: 20px;
+	background-color: #FFFFFF;
+	border: 1px solid #006666;
+	overflow: hidden;
+	/*margin-bottom: 10px;*/
+	margin:0 auto;
+	font-size: 11px;
+	background-image: url(../images/bg.gif);
+	background-repeat: no-repeat;
+	text-align: center;
+	color: #FF6600;
+}
+
+div.dajindutiao {
+	width: 1000px;
+	height: 60px;
+	background-color: #FFFFFF;
+	border: 1px solid #006666;
+	overflow: hidden;
+	/*margin-bottom: 10px;*/
+	margin:0 auto;
+	font-size: 11px;
+	background-image: url(../images/testgreen2.png);
+	background-repeat: no-repeat;
+	text-align: center;
+	color: #FF6600;
+}
+
+td.subtag {
+	background-color: #2183CB;
+	font-size: 12px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+div.content_01 {
+	width: 338px;
+	height: 40px;
+	padding: 5px;
+	background-color: #C0F7B7;
+}
+
+div.content_02 {
+	width: 338px;
+	height: 40px;
+	padding: 5px;
+	background-color: #B8D1F1;
+}
+
+div.content_03 {
+	width: 338px;
+	height: 40px;
+	padding: 5px;
+	background-color: #E19FA2;
+}
+
+a:link{color: black;text-decoration: none;}/*默认黑色无下划线*/
+a:hover{color: red;text-decoration: underline;}/*光标移上红色下划线*/
+a:visited{color: purple;text-decoration: none;}/*点完了变成紫色无下划线*/

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.rzpt.entity.CgFile" table="cg_file">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="path"></property>
+		<property name="name1"></property>
+		<property name="name2"></property>
+		<property name="name3"></property>
+		<property name="name4"></property>
+		<property name="name5"></property>
+		<property name="name6"></property>
+		<property name="name7"></property>
+		<property name="cg_id"></property>
+	</class>
+
+</hibernate-mapping>

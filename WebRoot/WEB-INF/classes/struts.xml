@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.locale" value="zh_CN" />
+	<constant name="struts.multipart.maxSize" value="971521" />
+	<constant value="/tmp" name="struts.multipart.saveDir" />
+
+	<package name="user" extends="struts-default" namespace="/user">
+
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.rzpt.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="errHandler" type="chain">
+				<param name="actionName">errorProcessor</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errHandler" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+
+		<action name="errorProcessor" class="com.rzpt.util.ErrorProcess">
+			<result>/error.jsp</result>
+		</action>
+		<action name="user_*" method="{1}" class="user_Action">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="loginerror">/loginerror.jsp</result>
+			<result name="me">/user/person_show.jsp</result>
+			<result name="me2">/user/person_show2.jsp</result>
+			<result name="getPros">/opage/page1.jsp</result>
+			<result name="opage1">/otherpage/opage1.jsp</result>
+			<result name="add0">/user/user_add.jsp</result>
+			<result name="list0">/user/user_table.jsp</result>
+			<result name="lookup">/user/user_lookup.jsp</result>
+			<result name="findPro1">/pro1admin/person_show.jsp</result>
+			<result name="findPro2">/department/person_show.jsp</result>
+			<result name="changePassword">/changePassword.jsp</result>
+			<interceptor-ref name="mystack"></interceptor-ref>
+		</action>
+
+		<action name="user-*" method="{1}" class="user_Action">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="loginerror">/loginerror.jsp</result>
+			<result name="0">/index0.jsp</result>		<!-- 超管 -->
+			<result name="1">/index1.jsp</result>		<!-- 一级管 -->
+			<result name="2">/user/deptManager.jsp</result>		<!-- 院部管 -->
+			<result name="3">/user/teacher.jsp</result>	<!-- 教师 -->
+			<result name = "indexLd">/indexLd.jsp</result>	<!-- 领导 -->
+			<result name="exitlogin">/login.jsp</result>
+			<result name="index0_1">/index0_1.jsp</result>
+			<result name="index0_2">/index0_2.jsp</result>
+			<result name="index0_3">/index0_3.jsp</result>
+			<result name="index0_4">/index0_4.jsp</result>
+			<result name="errorlogin">/errorlogin.jsp</result>
+		</action>
+
+	</package>
+
+	<package name="cg" extends="struts-default" namespace="/cg">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.rzpt.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="errHandler" type="chain">
+				<param name="actionName">errorProcessor</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errHandler" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+
+		<action name="errorProcessor" class="com.rzpt.util.ErrorProcess">
+			<result>/error.jsp</result>
+		</action>
+		<action name="cg_*" method="{1}" class="ChengguoAction">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="add">/admin/chengguo/cg_add.jsp</result>
+			<result name="list">/admin/chengguo/cg_list.jsp</result>
+			<result name="addlh">/admin/chengguo/lhzb/lh_add.jsp</result>
+			<result name="listlh">/admin/chengguo/lhzb/lh_list.jsp</result>
+			<result name="update0">/admin/chengguo/lhzb/lh_show.jsp</result>
+			<result name="upload">/admin/chengguo/cg_upload.jsp</result>
+			<result name="show">/admin/chengguo/cg_show.jsp</result>
+			<result name="newpageadd0">/newpage/gonggao_ziliao_add.jsp</result>
+			<result name="wenjianupload">/admin/wenjian/wenjian_upload.jsp</result>
+			<result name="down" type="stream">
+				<param name="contentDisposition">attachment;filename=${finename}</param>
+				<param name="inputName">inputStream</param>
+				<param name="bufferSize">4096</param>
+			</result>
+			<interceptor-ref name="mystack"></interceptor-ref>
+		</action>
+	</package>
+
+	<package name="project1" extends="struts-default" namespace="/project1">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.rzpt.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="errHandler" type="chain">
+				<param name="actionName">errorProcessor</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errHandler" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+
+		<action name="errorProcessor" class="com.rzpt.util.ErrorProcess">
+			<result>/error.jsp</result>
+		</action>
+		<action name="project1_*" method="{1}" class="project1_Action">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="list">/project/project1/project1_table.jsp</result>
+			<result name="lookup">/project/find/find1.jsp</result>
+			<result name="add0">/project/project1/project1_add.jsp</result>
+			<result name="list2">/admin/find/pro1_table.jsp</result>
+			<result name="lookup2">/admin/find/find1.jsp</result>
+			<result name="list3">/admin/find/pro1_pass.jsp</result>
+			<result name="tongjiByPro1">/admin/tongji/pro1_tongji.jsp</result>
+			<result name="tongjiByPro2">/admin/tongji/pro2_tongji.jsp</result>
+			<result name="tongjiByPro3">/admin/tongji/pro3_tongji.jsp</result>
+			<result name="tongjiByDept1">/admin/tongji/dept1_tongji.jsp</result>
+			<result name="p1">/admin/tongji/p1.jsp</result>
+			<result name="p2">/admin/tongji/p2.jsp</result>
+			<result name="p3">/admin/tongji/p3.jsp</result>
+			<result name="zonglan">/admin/zonglan.jsp</result>
+			<interceptor-ref name="mystack"></interceptor-ref>
+		</action>
+
+	</package>
+
+	<package name="project2" extends="struts-default" namespace="/project2">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.rzpt.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="errHandler" type="chain">
+				<param name="actionName">errorProcessor</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errHandler" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+
+		<action name="errorProcessor" class="com.rzpt.util.ErrorProcess">
+			<result>/error.jsp</result>
+		</action>
+		<action name="project2_*" method="{1}" class="project2_Action">
+			<result name="success">/success.jsp</result>
+			<result name="add1">/project/project2/project2_add.jsp</result>
+			<result name="list">/project/project2/project2_table.jsp</result>
+			<result name="lookup">/project/find/find2.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="allot0">/pro1admin/allot0_table.jsp</result>
+			<result name="allot1_1">/pro1admin/allot1_lookup.jsp</result>
+			<result name="allot4">/pro1admin/allot4_table.jsp</result>
+			<result name="allot5">/pro1admin/allot5_lookup.jsp</result>
+			<result name="pend">/pro1admin/project2_table.jsp</result>
+			<result name="pend2">/pro1admin/project3_table.jsp</result>
+			<result name="pend3">/pro1admin/task_table.jsp</result>
+			<result name="pend4">/pro1admin/watch_table.jsp</result>
+			<result name="lookup2">/admin/find/find2.jsp</result>
+			<result name="dmlook">/department/find1.jsp</result>
+			<result name="dmlook2">/department/find2.jsp</result>
+			<result name="dmlook3">/department/find3.jsp</result>
+			<result name="dmlook4">/department/find4.jsp</result>
+			<interceptor-ref name="mystack"></interceptor-ref>
+		</action>
+
+	</package>
+
+	<package name="project3" extends="struts-default" namespace="/project3">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.rzpt.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="errHandler" type="chain">
+				<param name="actionName">errorProcessor</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errHandler" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+
+		<action name="errorProcessor" class="com.rzpt.util.ErrorProcess">
+			<result>/error.jsp</result>
+		</action>
+		<action name="project3_*" method="{1}" class="project3_Action">
+			<result name="success">/success.jsp</result>
+			<result name="add1">/project/project3/project3_add.jsp</result>
+			<result name="list">/project/project3/project3_table.jsp</result>
+			<result name="lookup">/project/find/find3.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="lookup2">/admin/find/find3.jsp</result>
+			<result name="getPro2Json">/watch/watch_getUserJson.jsp</result>
+			<result name="p3show">/opage/page2.jsp</result>
+			<interceptor-ref name="mystack"></interceptor-ref>
+		</action>
+
+	</package>
+	<package name="dept" extends="struts-default" namespace="/dept">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.rzpt.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="errHandler" type="chain">
+				<param name="actionName">errorProcessor</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errHandler" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+
+		<action name="errorProcessor" class="com.rzpt.util.ErrorProcess">
+			<result>/error.jsp</result>
+		</action>
+		<action name="dept_*" method="{1}" class="deptAction">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="list">/dept/dept_list.jsp</result>
+			<result name="update">/dept/dept_update.jsp</result>
+			<interceptor-ref name="mystack"></interceptor-ref>
+		</action>
+
+	</package>
+
+	<package name="task" extends="struts-default" namespace="/task">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.rzpt.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="errHandler" type="chain">
+				<param name="actionName">errorProcessor</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errHandler" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+
+		<action name="errorProcessor" class="com.rzpt.util.ErrorProcess">
+			<result>/error.jsp</result>
+		</action>
+		<action name="task_*" method="{1}" class="taskAction">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="add">/task/task_add.jsp</result>
+			<result name="list">/task/task_list.jsp</result>
+			<result name="show">/task/task_show.jsp</result>
+			<result name="update">/task/task_update.jsp</result>
+			<result name="lookup">/project/find/find4.jsp</result>
+			<result name="lookup2">/admin/find/find4.jsp</result>
+			<result name="getPro2Json">/watch/watch_getUserJson.jsp</result>
+			<interceptor-ref name="mystack"></interceptor-ref>
+		</action>
+
+	</package>
+
+	<package name="watch" extends="struts-default" namespace="/watch">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.rzpt.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack">
+					<param name="fileUpload.maximumSize">809715200</param>
+					<!-- <param name="fileUpload.allowedTypes">application/x-zip-compressed</param> 
+						<param name="fileUpload.allowedExtensions">zip</param> -->
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="errHandler" type="chain">
+				<param name="actionName">errorProcessor</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errHandler" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+
+		<action name="errorProcessor" class="com.rzpt.util.ErrorProcess">
+			<result>/error.jsp</result>
+		</action>
+		<action name="watch_*" method="{1}" class="watchAction">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="noResult">/noResult.jsp</result>
+			<result name="add">/watch/watch_add.jsp</result>
+			<result name="unfinish">/watch/watch_unfinish.jsp</result>
+			<result name="finish">/watch/watch_finish.jsp</result>
+			<result name="show">/watch/watch_show.jsp</result>
+			<result name="update">/watch/watch_update.jsp</result>
+			<result name="pend4">/pro1admin/watch_table.jsp</result>
+			<result name="otherUnallocated">/watch/watch_otherUnallocated.jsp</result>
+			<result name="unallocated">/watch/watch_unallocated.jsp</result>
+			<result name="otherAllocate">/watch/watch_otherAllocate.jsp</result>
+			<result name="allocate">/watch/watch_allocate.jsp</result>
+			<result name="unpend">/watch/watch_unpend.jsp</result>
+			<result name="pend">/watch/watch_pend.jsp</result>
+			<result name="unfinishByDept">/watch/watch_unfinishByDept.jsp</result>
+			<result name="finishByDept">/watch/watch_finishByDept.jsp</result>
+			<result name="unfinishByTeacher">/watch/watch_unfinishByTeacher.jsp</result>
+			<result name="unpendByTeacher">/watch/watch_unpendByTeacher.jsp</result>
+			<result name="unpendByTeacher2">/watch/watch_unpend2ByTeacher.jsp</result>
+			<result name="unpendByTeacher3">/watch/watch_unpend3ByTeacher.jsp</result>
+			<result name="pendFail">/watch/watch_pendFail.jsp</result>
+			<result name="failShow">/watch/watch_failShow.jsp</result>
+			<result name="lookup">/watch/watch_lookup.jsp</result>
+			<result name="look">/watch/watch_look.jsp</result>
+			<result name="getUserJson">/watch/watch_getUserJson.jsp</result>
+			<result name="joinList">/watch/watch_joinList.jsp</result>
+			<result name="file_look">/watch/watch_file_look.jsp</result>
+			<result name="downloadunpassfile">/watch/watch_downloadunpassfile.jsp</result>
+			<result name="getPro2Json">/watch/watch_getUserJson.jsp</result>
+			<interceptor-ref name="mystack"></interceptor-ref>
+		</action>
+
+	</package>
+
+	<package name="file" namespace="/file" extends="struts-default">
+		<interceptors>
+			<interceptor-stack name="myInterceptor">
+				<interceptor-ref name="defaultStack">
+					<param name="fileUpload.maximumSize">809715200</param>
+					<!-- <param name="fileUpload.allowedTypes">application/x-zip-compressed</param> 
+						<param name="fileUpload.allowedExtensions">zip</param> -->
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myInterceptor" />
+		<global-results>
+			<result name="errHandler" type="chain">
+				<param name="actionName">errorProcessor</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errHandler" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+
+		<action name="errorProcessor" class="com.rzpt.util.ErrorProcess">
+			<result>/error.jsp</result>
+		</action>
+		<action name="file_*" class="fileAction" method="{1}">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="add">/file/file_add.jsp</result>
+			<result name="lookup">/admin/find/find5.jsp</result>
+			<result name="upload">/file_upload.jsp</result>
+			<result name="input">/upload.jsp</result>
+			<result name="unfinishByTeacher">/watch/watch_unfinishByTeacher.jsp</result>
+			<result name="look">/watch/watch_pageoffice.jsp</result>
+			<result name="pdf">/watch/watch_pdf.jsp</result>
+			<result name="down" type="stream">
+				<param name="contentDisposition">attachment;filename=${finename}</param>
+				<param name="inputName">inputStream</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+
+	</package>
+
+	<package name="audit" extends="struts-default" namespace="/audit">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.rzpt.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<global-results>
+			<result name="errHandler" type="chain">
+				<param name="actionName">errorProcessor</param>
+			</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="errHandler" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+
+		<action name="errorProcessor" class="com.rzpt.util.ErrorProcess">
+			<result>/error.jsp</result>
+		</action>
+		<action name="audit_*" method="{1}" class="auditAction">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+			<interceptor-ref name="mystack"></interceptor-ref>
+		</action>
+	</package>
+
+
+	<constant name="struts.multipart.maxSize" value="809715200" />
+	<constant value="/tmp" name="struts.multipart.saveDir" />
+
+	<package name="schedule" extends="struts-default" namespace="/schedule">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.rzpt.interceptor.LoginInterceptor"></interceptor>
+			<interceptor-stack name="myInterceptor">
+				<interceptor-ref name="loginInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack">
+					<param name="fileUpload.maximumSize">809715200</param>
+					<!-- <param name="fileUpload.allowedTypes">application/x-zip-compressed</param> 
+						<param name="fileUpload.allowedExtensions">zip</param> -->
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<action name="schedule_*" method="{1}" class="scheduleAction">
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="add">/schedule/schedule_add.jsp</result>
+			<result name="look">/schedule/schedule_look.jsp</result>
+			<result name="unfinishByTeacher">/watch/watch_unfinishByTeacher.jsp</result>
+			<interceptor-ref name="myInterceptor" />
+		</action>
+	</package>
+</struts>
+

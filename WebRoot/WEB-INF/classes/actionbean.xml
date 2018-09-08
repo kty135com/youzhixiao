@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+	<!-- bean definitions here -->
+
+	<bean id="user_Action" class="com.rzpt.action.User_Action" scope="prototype"></bean>
+	<bean id="user_Service" class="com.rzpt.service.User_Service"
+		scope="prototype"></bean>
+	<bean id="user" class="com.rzpt.entity.User" scope="prototype"></bean>
+
+	<bean id="project1_Action" class="com.rzpt.action.Pro1_Action"
+		scope="prototype"></bean>
+	<bean id="project1_Service" class="com.rzpt.service.Pro1_Service"
+		scope="prototype"></bean>
+	<bean id="project1" class="com.rzpt.entity.Pro1" scope="prototype"></bean>
+
+	<bean id="project2_Action" class="com.rzpt.action.Pro2_Action"
+		scope="prototype"></bean>
+	<bean id="project2_Service" class="com.rzpt.service.Pro2_Service"
+		scope="prototype"></bean>
+	<bean id="project2" class="com.rzpt.entity.Pro2" scope="prototype"></bean>
+
+	<bean id="project3_Action" class="com.rzpt.action.Pro3_Action"
+		scope="prototype"></bean>
+	<bean id="project3_Service" class="com.rzpt.service.Pro3_Service"
+		scope="prototype"></bean>
+	<bean id="project3" class="com.rzpt.entity.Pro3" scope="prototype"></bean>
+
+	<bean id="watchService" class="com.rzpt1.service.Watch_Service"
+		scope="prototype"></bean>
+		<bean id="fileService" class="com.rzpt1.service.File_Service"
+		scope="prototype"></bean>
+
+	<bean id="department_Action" class="com.rzpt.action.Dept_Action"
+		scope="prototype"></bean>
+	<bean id="department_Service" class="com.rzpt.service.Dept_Service"
+		scope="prototype"></bean>
+	<bean id="department" class="com.rzpt.entity.Dept" scope="prototype"></bean>
+
+	<bean id="watch" class="com.rzpt.entity.Watch" scope="prototype"></bean>
+	<bean id="task" class="com.rzpt.entity.Task" scope="prototype"></bean>
+
+</beans>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.rzpt.entity.Chengguo" table="chengguo">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="no"></property>
+		<property name="state"></property>
+		<property name="name"></property>
+		<property name="person"></property>
+		<property name="jibie"></property>
+		<property name="dept"></property>
+		<property name="fenmu"></property>
+		<property name="fenzi"></property>
+		<property name="beizhu"></property>
+	</class>
+
+</hibernate-mapping>

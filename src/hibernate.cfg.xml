@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 可选配置 -->
+		<!-- 输出底层sql语句 -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- 输出底层sql语句格式化 -->
+		<property name="hibernate.format_sql">true</property>
+		<!-- 配置数据库方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 将Session绑定于本地线程,否则可能多线程未结束产生异常 -->
+		<property name="hibernate.current_session_context_class">org.springframework.orm.hibernate5.SpringSessionContext</property>
+
+		<!-- 把映射文件放入核心配置文件 -->
+		<mapping resource="com/rzpt/hcfg/Dept.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/File.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/CgFile.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/Pro1.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/Pro2.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/Pro3.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/Task.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/User.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/Watch.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/Audit.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/Schedule.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/Chengguo.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/Lhzb.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/Wenjian.hbm.xml" />
+		<mapping resource="com/rzpt/hcfg/WenjianFile.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

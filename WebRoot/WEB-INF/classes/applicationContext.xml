@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans  
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd  
+        http://www.springframework.org/schema/context  
+        http://www.springframework.org/schema/context/spring-context.xsd  
+        http://www.springframework.org/schema/aop  
+        http://www.springframework.org/schema/aop/spring-aop.xsd  
+        http://www.springframework.org/schema/tx  
+        http://www.springframework.org/schema/tx/spring-tx.xsd  
+        ">
+	<!-- class : bean全类名，通过反射方式在ioc容器中创建bean，要求bean中必须有无参构造方法 id：唯一表示，获取bean的 -->
+
+	<bean id="deptService" class="com.rzpt1.service.Dept_Service" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="deptAction" class="com.rzpt1.action.Dept_Action" scope="prototype">
+		<property name="deptService" ref="deptService"></property>
+	</bean>
+
+	<bean id="userService" class="com.rzpt1.service.User_Service" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<!-- <bean id="userAction" class="com.rzpt.action.User_Action"> <property 
+		name="user_Service" ref="userService"></property> </bean> -->
+
+	<bean id="pro1Service" class="com.rzpt.service.Pro1_Service" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="pro3Service" class="com.rzpt1.service.Pro3_Service" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="pro2Service" class="com.rzpt1.service.Pro2_Service" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+
+	<bean id="taskService" class="com.rzpt1.service.Task_Service" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="taskAction" class="com.rzpt1.action.Task_Action" scope="prototype">
+		<property name="taskService" ref="taskService"></property>
+		<property name="pro3Service" ref="pro3Service"></property>
+		<property name="watchService" ref="watchService"></property>
+	</bean>
+
+	<bean id="watchService" class="com.rzpt1.service.Watch_Service" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="fileService" class="com.rzpt1.service.File_Service" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="watchAction" class="com.rzpt1.action.Watch_Action"
+		scope="prototype">
+		<property name="watchService" ref="watchService"></property>
+		<property name="pro3Service" ref="pro3Service"></property>
+		<property name="pro2Service" ref="pro2Service"></property>
+		<property name="taskService" ref="taskService"></property>
+		<property name="userService" ref="userService"></property>
+		<property name="deptService" ref="deptService"></property>
+		<property name="fileService" ref="fileService"></property>
+		<property name="auditService" ref="auditService"></property>
+	</bean>
+
+	<bean id="ChengguoService" class="com.rzpt1.service.Chengguo_Service" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="ChengguoAction" class="com.rzpt1.action.Chengguo_Action"
+		scope="prototype">
+		<property name="ChengguoService" ref="ChengguoService"></property>
+	</bean>
+
+	<bean id="fileAction" class="com.rzpt1.action.File_Action" scope="prototype">
+		<property name="fileService" ref="fileService"></property>
+		<property name="watchService" ref="watchService"></property>
+		<property name="scheduleService" ref="scheduleService"></property>
+		<property name="pro3Service" ref="pro3Service"></property>
+		<property name="pro2Service" ref="pro2Service"></property>
+		<property name="pro1Service" ref="pro1Service"></property>
+		<property name="cs" ref="ChengguoService"></property>
+		<property name="userService" ref="userService"></property>
+	</bean>
+	<bean id="auditService" class="com.rzpt1.service.Audit_Service" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="scheduleService" class="com.rzpt1.service.Schedule_Service" scope="prototype">
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	<bean id="scheduleAction" class="com.rzpt1.action.Schedule_Action" scope="prototype">
+		<property name="scheduleService" ref="scheduleService"></property>
+		<property name="watchService" ref="watchService"></property>
+		<property name="fileService" ref="fileService"></property>
+	</bean>
+
+</beans>
